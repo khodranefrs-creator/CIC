@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LivingMark from "./LivingMark";
+import Image from "next/image";
 
 const FOOT_LINKS = [
   {
@@ -35,7 +35,14 @@ export default function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link href="#top" className="inline-flex items-center gap-3">
-              <LivingMark className="h-9 w-9" title={false} />
+              <Image
+                src="/logo-v2-transparent.png"
+                alt="Quantum Clinical Research CIC — The Living Field"
+                width={133}
+                height={100}
+                className="h-auto w-[133px] max-w-none object-none object-center"
+                style={{ marginLeft: "-20px", marginTop: "-28px" }}
+              />
               <span className="leading-tight">
                 <span className="block font-mono text-[0.625rem] tracking-[0.3em] text-mist">
                   QUANTUM CLINICAL

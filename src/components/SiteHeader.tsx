@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import LivingMark from "./LivingMark";
+import Image from "next/image";
 
 const NAV = [
   { href: "#top", label: "The field" },
@@ -24,12 +24,20 @@ export default function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-hair-dark/60 bg-field-950/80 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 md:h-20 md:px-8">
         <Link href="#top" className="flex items-center gap-3" aria-label="Quantum Clinical Research CIC homepage">
-          <LivingMark className="h-9 w-9 shrink-0" />
+          <Image
+            src="/logo-transparent.png"
+            alt="Quantum Clinical Research CIC — The Living Field"
+            width={130}
+            height={98}
+            priority
+            className="h-auto w-[130px] max-w-none object-none object-center"
+            style={{ marginLeft: "-18px", marginTop: "-27px" }}
+          />
           <span className="hidden sm:block">
             <span className="lab-label text-mist">Quantum Clinical</span>
             <span className="block font-serif text-sm tracking-wide text-paper">
               Research
-              <span className="text-lumen"> Â· </span>CIC
+              <span className="text-lumen"> · </span>CIC
             </span>
           </span>
         </Link>

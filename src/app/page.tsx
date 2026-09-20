@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
 import Hero from "../components/Hero";
 import SiteFooter from "../components/SiteFooter";
+import Team from "../components/sections/Team";
+import Finances from "../components/sections/Finances";
+import NextStudy from "../components/sections/NextStudy";
+import Collaborate from "../components/sections/Collaborate";
+import Bibliography from "../components/sections/Bibliography";
 
 export const metadata: Metadata = {
   title: "Quantum Clinical Research CIC — The Living Field",
@@ -149,8 +154,12 @@ export default function Home() {
               available to all.
             </p>
           </div>
-        </section>
-        <section id="support" className="border-t border-carbon bg-carbon/40 py-24">
+         </section>
+         <Team />
+         <Finances />
+         <NextStudy />
+         <Collaborate />
+         <section id="support" className="border-t border-carbon bg-carbon/40 py-24">
           <div className="mx-auto max-w-3xl px-6 text-center">
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
               Support
@@ -170,6 +179,7 @@ export default function Home() {
             </a>
           </div>
         </section>
+        <Bibliography />
       </main>
       <SiteFooter />
     </>

@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   QUANTUM CLINICAL RESEARCH CIC — "THE LIVING FIELD" — DESIGN SYSTEM
+   --------------------------------------------------------------------------
+   Provisional brand language derived from the organisation's scientific
+   domain: clinical research + biophysics + light + bioelectrical phenomena.
+   No logo was supplied to this build, so an original "living field" mark is
+   designed inline to represent the organisation until the real institutional
+   logo is provided. Colour values live in ONE place (:root) — update the
+   tokens here and the entire site re-tints.
+   ========================================================================== */
+
+:root {
+  /* ——— surface fields (dark scientific grounds) ——— */
+  --ink: #05090c;            /* deepest field, body on light */
+  --field-950: #061014;      /* hero ground */
+  --field-900: #08181f;      /* section ground */
+  --field-850: #0a2029;      /* seams on dark */
+  --field-800: #0d2a34;      /* panel ground, dark */
+
+  /* ——— institutional primary (clinical teal) ——— */
+  --core: #0f7f8f;           /* primary action / link */
+  --core-deep: #0b5a68;      /* hover / quiet primary */
+  --core-ink: #083c47;       /* primary on paper */
+
+  /* ——— luminous aqua accent (living energy / lumen) ——— */
+  --lumen: #57e6cd;
+  --lumen-deep: #2fbda8;
+
+  /* ——— secondary warm accent (photon, used very sparsely) ——— */
+  --photon: #e9c97e;
+  --photon-deep: #d8ab5c;
+
+  /* ——— paper / clinical surfaces (light) ——— */
+  --paper: #f4f1e9;          /* warm off-white ground */
+  --paper-deep: #e8e3d4;     /* seams on light */
+  --panel: #fbfaf5;
+
+  /* ——— supporting muted tones + hairlines ——— */
+  --mist: #8ba6b0;           /* muted text on dark */
+  --mist-deep: #5d7079;      /* muted text on light */
+  --hair-dark: #172c35;      /* hairline on dark */
+  --hair-light: #d6cfb8;     /* hairline on light */
+
+  /* ——— index fonts (wired in layout.tsx) ——— */
+  --font-manrope: ui-sans-serif, system-ui, sans-serif;
+  --font-newsreader: Georgia, "Times New Roman", serif;
+  --font-plex: ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* ——— Tailwind tokens (utilities map to these) ——— */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-field-950: var(--field-950);
+  --color-field-900: var(--field-900);
+  --color-field-850: var(--field-850);
+  --color-field-800: var(--field-800);
+
+  --color-core: var(--core);
+  --color-core-deep: var(--core-deep);
+  --color-core-ink: var(--core-ink);
+
+  --color-lumen: var(--lumen);
+  --color-lumen-deep: var(--lumen-deep);
+
+  --color-photon: var(--photon);
+  --color-photon-deep: var(--photon-deep);
+
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-panel: var(--panel);
+
+  --color-mist: var(--mist);
+  --color-mist-deep: var(--mist-deep);
+  --color-hair-dark: var(--hair-dark);
+  --color-hair-light: var(--hair-light);
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-plex), ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* ——— base ——— */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgb(46 66 99 / 0.2);
+}
+
+:focus-visible {
+  outline: 2px solid var(--lumen);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ——— scientific coordinate grid / field backdrop ——— */
+.field-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(135 230 205 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(135 230 205 / 0.06) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+.field-grid-light {
+  background-image:
+    linear-gradient(to right, rgb(134 194 182 / 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(134 194 182 / 0.18) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+/* ——— micro lab label ——— */
+.lab-label {
+  font-family: var(--font-plex), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ——— editorial serif ——— */
+.editorial {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-variation-settings: "opsz" 38;
+}
+
+/* ——— keyframes: the living field ——— */
+@keyframes field-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.3; }
+  50%      { transform: translate3d(13px, -9px, 0); opacity: 0.55; }
+}
+@keyframes field-breathe {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.04); }
+}
+@keyframes field-sweep {
+  0%      { transform: translateX(-12%); opacity: 0; }
+  25%     { opacity: 1; }
+  75%     { opacity: 0.25; }
+  100%    { transform: translateX(12%); opacity: 0; }
+}
+@keyframes wave-propagate {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes photon-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  55%  { transform: translate3d(0, -22px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ——— reveal on scroll ——— */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}

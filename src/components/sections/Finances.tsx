@@ -20,7 +20,7 @@ export default function Finances() {
       <div className="overflow-hidden border border-hair-light">
         {ROWS.map((r, i) => (
           <Reveal key={r.k} delay={i * 70}>
-            <div className="grid gap-2 border-b border-hair-light p-6 last:border-b-0 md:grid-cols-[14rem_1fr] md:gap-6 md:p-8">
+            <div className="grid gap-3 border-b border-hair-light py-8 last:border-b-0 md:grid-cols-[15rem_1fr] md:gap-8 md:py-10">
               <p className="lab-label text-core-deep">{r.k}</p>
               <p className="editorial text-lg text-ink">{r.v}</p>
             </div>

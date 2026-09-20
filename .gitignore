@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# ——— institutional logo files (original art assets, tracked & committed in 4fc6ca6) ———
+# These logo files are FROM THE CLIENT's ORIGINAL supplied art and are tracked in
+# git. They must NOT be git-ignored. If a logo is ever replaced, the file itself
+# is updated and committed — never ignored.
+/logo blue background.jpg
+/logo transparent background.png
+/logo version 2 tranparent bg.png
+/logo white background.jpg
+
+# ——— local verification scratch (screenshot/dom captures + headless-browser runtime) ———
+# These are artifacts produced during local rendering/audit passes and must never
+# be committed to the institutional repository.
+/.dev-*.log
+/.devpid
+/_.verify-home.png
+/_home.html
+/_home.png
+/_chrome-prof/

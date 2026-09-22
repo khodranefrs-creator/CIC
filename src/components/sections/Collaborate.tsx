@@ -25,7 +25,7 @@ export default function Collaborate() {
       title="Commission or collaborate with us"
       intro="If your question needs real, open evidence — we can design and run that study together. These seats are real; the terms below are the standard we held even before the first grant."
     >
-      <div className="grid gap-px border border-hair-dark bg-hair-dark md:grid-cols-3">
+      <div className="grid gap-3 border border-hair-dark bg-hair-dark md:grid-cols-3">
         {WAYS.map((w, i) => (
           <Reveal key={w.k} delay={i * 90}>
             <article className="flex h-full flex-col bg-field-900 p-8">

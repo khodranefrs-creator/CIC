@@ -34,7 +34,7 @@ export default function Team() {
       title="A small team, honestly built"
       intro="Every person we add must believe the same thing: that the work exists to be shared, not to be owned. These seats are waiting to be filled by the right people — openly and without ego."
     >
-      <div className="grid gap-px border border-hair-dark bg-hair-dark md:grid-cols-2">
+      <div className="grid gap-2 border border-hair-dark bg-hair-dark md:grid-cols-2">
         {PEOPLE.map((p, i) => (
           <Reveal key={p.role} delay={i * 90}>
             <article className="flex h-full flex-col bg-field-900 p-8">

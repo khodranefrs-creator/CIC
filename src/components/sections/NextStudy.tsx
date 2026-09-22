@@ -32,7 +32,7 @@ export default function NextStudy() {
       title="Our next planned study"
       intro="A placeholder while the protocol is in design review. Every detail — the question, the method, the budget, who is involved — will be published here in full before we enrol a single participant."
     >
-      <div className="grid gap-px border border-paper-deep bg-paper-deep md:grid-cols-2">
+      <div className="grid gap-3 border border-paper-deep bg-paper-deep md:grid-cols-2">
         {COLS.map((c, i) => (
           <Reveal key={c.k} delay={i * 80}>
             <div className="flex h-full flex-col bg-core-ink p-8">

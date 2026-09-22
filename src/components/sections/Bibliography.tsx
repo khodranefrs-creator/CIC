@@ -28,7 +28,7 @@ export default function Bibliography() {
       <div className="border-t border-hair-light">
         {ENTRIES.map((e, i) => (
           <Reveal key={e.label} delay={i * 80}>
-            <div className="grid gap-3 border-b border-hair-light py-8 md:grid-cols-[14rem_1fr] md:gap-6">
+            <div className="grid gap-3 border-b border-hair-light py-10 md:grid-cols-[14rem_1fr] md:gap-8">
               <p className="lab-label text-core-deep">{e.label}</p>
               <p className="text-sm leading-relaxed text-ink">{e.note}</p>
             </div>

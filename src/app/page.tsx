@@ -7,6 +7,9 @@ import Finances from "../components/sections/Finances";
 import NextStudy from "../components/sections/NextStudy";
 import Collaborate from "../components/sections/Collaborate";
 import Bibliography from "../components/sections/Bibliography";
+import Reveal from "../components/Reveal";
+import SectionLabel from "../components/SectionLabel";
+import FieldBackdrop from "../components/FieldBackdrop";
 
 export const metadata: Metadata = {
   title: "Quantum Clinical Research CIC — The Living Field",
@@ -14,162 +17,95 @@ export const metadata: Metadata = {
     "An open, not-for-profit community interest company studying energetic and biophysical medicine as a whole-organism, measurable clinical science — published openly for everyone.",
 };
 
+const MISSION_STATES = [
+  { n: "01", t: "Living systems", v: "Cells, rhythms, and regulatory fields read as one interdependent living whole." },
+  { n: "02", t: "Replicable method", v: "Everything we test is written down, measured, and open to independent review." },
+  { n: "03", t: "Open publishing", v: "Results — including null results — published openly for everyone." },
+];
+
+const RESEARCH_ROWS = [
+  ["01", "Hypothesis", "Framed precisely before data collection."],
+  ["02", "Protocol", "Written down, versioned, and shared before measurement."],
+  ["03", "Outcome", "Results and null results published openly."],
+] as const;
+
 export default function Home() {
   return (
     <>
       <SiteHeader />
       <main id="main">
         <Hero />
-        <section
-          id="mission"
-          className="border-b border-carbon bg-carbon/40 py-24"
-        >
-          <div className="mx-auto max-w-3xl px-6 text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-              Mission
-            </p>
-            <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-              Open science, not closed belief
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-mist">
-              Quantum Clinical Research CIC exists to bring energetic and
-              biophysical medicine into the open — studied with rigorous,
-              replicable, openly published methods, and shared with everyone.
-            </p>
-          </div>
-        </section>
-        <section
-          id="approach"
-          className="border-b border-carbon py-24"
-        >
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-                Approach
-              </p>
-              <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-                Whole-organism coherence
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-mist">
-                We study the body as a living field — cells, rhythms, and
-                environment read as one interdependent whole, never as a
-                machine of isolated parts.
-              </p>
-            </div>
-            <div className="mt-16 grid gap-6 md:grid-cols-3">
-              {[
-                ["01", "Living systems", "Cells, rhythms, and regulatory fields understood as interdependent wholes."],
-                ["02", "Replicable method", "Every protocol written down, measured, and shared for independent review."],
-                ["03", "Open publishing", "Results — including null results — published openly for everyone."],
-              ].map(([n, t, d]) => (
-                <div
-                  key={n}
-                  className="rounded-2xl border border-carbon bg-carbon/30 p-8"
-                >
-                  <p className="text-sm font-medium text-water">{n}</p>
-                  <h3 className="mt-3 text-xl font-medium">{t}</h3>
-                  <p className="mt-3 leading-relaxed text-mist">{d}</p>
-                </div>
-              ))}
+        <section id="mission" className="border-b border-carbon bg-field-950 py-24">
+          <div className="mx-auto max-w-7xl px-6 md:px-10">
+            <div className="grid gap-16 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+              <div>
+                <SectionLabel>Mission</SectionLabel>
+                <h2 className="editorial mt-8 font-display text-4xl font-medium tracking-tight md:text-5xl">
+                  Open science, not closed belief
+                </h2>
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist">
+                  Quantum Clinical Research CIC exists to bring energetic and
+                  biophysical medicine into the open — studied with rigorous,
+                  replicable, openly published methods, and shared with everyone.
+                </p>
+              </div>
+              <ol className="border-t border-carbon">
+                {MISSION_STATES.map((m) => (
+                  <li key={m.n} className="border-b border-carbon py-6">
+                    <p className="font-mono text-xs text-water">{m.n}</p>
+                    <h3 className="mt-2 font-display text-xl font-medium text-paper">{m.t}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-mist">{m.v}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </section>
-        <section
-          id="treatments"
-          className="border-b border-carbon bg-carbon/40 py-24"
-        >
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-                Treatments
-              </p>
-              <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-                Practices studied, not promised
-              </h2>
-              <p className="mt-6 text-lg leading-relaxed text-mist">
-                We study the energetic and biophysical practices people
-                actually use — measuring what happens, and publishing the
-                record either way.
-              </p>
-            </div>
-            <div className="mt-16 grid gap-6 md:grid-cols-2">
-              {[
-                ["Acupuncture", "Tracing the living field along classical meridians, measured not assumed."],
-                ["Homeopathy", "Ultra-diluted preparations studied for replicable signal, not belief."],
-                ["Bioenergetics", "Energetic modalities logged with the same rigour as any clinical tool."],
-                ["Herbal medicine", "Whole-plant preparations, standardised and published for review."],
-              ].map(([t, d]) => (
-                <div
-                  key={t}
-                  className="rounded-2xl border border-carbon bg-carbon/30 p-8"
-                >
-                  <h3 className="text-xl font-medium">{t}</h3>
-                  <p className="mt-3 leading-relaxed text-mist">{d}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="research" className="border-b border-carbon py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-                Research
-              </p>
-              <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+        <section id="research" className="border-b border-carbon bg-carbon/30 py-24">
+          <div className="mx-auto max-w-7xl px-6 md:px-10">
+            <div className="max-w-3xl">
+              <SectionLabel>Research</SectionLabel>
+              <h2 className="editorial mt-8 font-display text-4xl font-medium tracking-tight md:text-5xl">
                 Measured, published, replicated
               </h2>
-              <p className="mt-6 text-lg leading-relaxed text-mist">
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist">
                 Every study records its method and outcomes so findings can be
                 checked, challenged, and built upon by any researcher anywhere.
               </p>
             </div>
-            <div className="mt-16 overflow-hidden rounded-2xl border border-carbon bg-carbon/30">
-              <div className="grid divide-y divide-carbon md:grid-cols-3 md:divide-x md:divide-y-0">
-                {[
-                  ["Hypothesis", "Framed precisely before data collection."],
-                  ["Protocol", "Written down, peer-reviewed, versioned."],
-                  ["Outcome", "Results and null results published openly."],
-                ].map(([t, d]) => (
-                  <div key={t} className="p-8">
-                    <p className="text-4xl font-light text-water">{t}</p>
-                    <p className="mt-3 text-mist">{d}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ol className="mt-16 border-t border-carbon">
+              {RESEARCH_ROWS.map(([n, t, d]) => (
+                <li key={n} className="grid border-b border-carbon py-8 md:grid-cols-[120px_200px_1fr]">
+                  <p className="font-mono text-xs text-water">{n}</p>
+                  <h3 className="font-display text-xl font-medium text-paper">{t}</h3>
+                  <p className="mt-2 leading-relaxed text-mist md:mt-0">{d}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
         <section id="vision" className="border-b border-carbon bg-carbon/40 py-24">
-          <div className="mx-auto max-w-3xl px-6 text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-              Vision
-            </p>
-            <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
-              A field of care that belongs to everyone
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-mist">
-              We imagine a future where energetic medicine is welcomed into
-              the evidence base — studied with rigour, funded openly, and
-              available to all.
+          <div className="mx-auto max-w-7xl px-6 md:px-10">
+            <SectionLabel>Vision</SectionLabel>
+            <p className="mt-8 max-w-4xl font-display text-4xl font-light leading-[1.08] tracking-tight text-paper md:text-6xl">
+              A field of care that belongs to{" "}
+              <em className="italic text-lumen">everyone</em>.
             </p>
           </div>
-         </section>
-         <Team />
-         <Finances />
-         <NextStudy />
-         <Collaborate />
-         <section id="support" className="border-t border-carbon bg-carbon/40 py-24">
+        </section>
+        <Team />
+        <Finances />
+        <NextStudy />
+        <Collaborate />
+        <section id="support" className="border-t border-carbon bg-carbon/40 py-24">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-air">
-              Support
-            </p>
-            <h2 className="font-display text-4xl font-medium tracking-tight md:text-5xl">
+            <SectionLabel>Support</SectionLabel>
+            <h2 className="mt-8 font-display text-4xl font-medium tracking-tight md:text-5xl">
               Help us fund open research
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-mist">
-              Quantum Clinical Research CIC is not-for-profit. Your support
-              keeps our studies open, independent, and free to read.
+              Quantum Clinical Research CIC is not-for-profit. Your support keeps
+              our studies open, independent, and free to read.
             </p>
             <a
               href="mailto:hello@qcr.cic"

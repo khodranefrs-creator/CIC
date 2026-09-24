@@ -14,13 +14,13 @@ import FieldBackdrop from "../components/FieldBackdrop";
 export const metadata: Metadata = {
   title: "Quantum Clinical Research CIC",
   description:
-    "An open, not-for-profit community interest company studying energetic and biophysical medicine as a whole-organism, measurable clinical science â€” published openly for everyone.",
+    "An open, not-for-profit community interest company studying energetic and biophysical medicine as a whole-organism, measurable clinical science — published openly for everyone.",
 };
 
 const MISSION_INDEX = [
   { n: "01", k: "Living systems", v: "Cells, rhythms, and regulatory fields understood as interdependent wholes." },
   { n: "02", k: "Replicable method", v: "Every protocol written down, measured, and shared for independent review." },
-  { n: "03", k: "Open publishing", v: "Results â€” including null results â€” published openly for everyone." },
+  { n: "03", k: "Open publishing", v: "Results — including null results — published openly for everyone." },
 ];
 
 const TREATMENTS_INDEX = [
@@ -32,7 +32,7 @@ const TREATMENTS_INDEX = [
 
 const RESEARCH_PATH = [
   { n: "05", k: "Hypothesis", v: "Framed precisely before data collection, so the question is never moved after the fact." },
-  { n: "06", k: "Protocol", v: "Written down, peer-reviewed, versioned â€” open before measurement begins." },
+  { n: "06", k: "Protocol", v: "Written down, peer-reviewed, versioned — open before measurement begins." },
   { n: "07", k: "Outcome", v: "Results and null results published openly for independent review." },
 ];
 
@@ -67,7 +67,7 @@ export default function Home() {
                 <Reveal delay={240}>
                   <p className="mt-10 max-w-2xl text-lg leading-relaxed text-mist">
                     Quantum Clinical Research CIC exists to bring energetic
-                    and biophysical medicine into the open â€” studied with
+                    and biophysical medicine into the open — studied with
                     rigorous, replicable, openly published methods. We study
                     the body as a living field, never a machine of isolated
                     parts.
@@ -119,7 +119,7 @@ export default function Home() {
                 </Reveal>
                 <Reveal delay={240}>
                   <p className="mt-8 max-w-xl text-lg leading-relaxed text-mist">
-                    We study the person as one living field â€” cells, rhythms,
+                    We study the person as one living field — cells, rhythms,
                     and environment read as one interdependent whole. No
                     subsystem is measured apart from the whole that carries
                     it.
@@ -197,7 +197,7 @@ export default function Home() {
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-mist">
                 We study the energetic and biophysical practices people
-                actually use â€” measuring what happens, and publishing the
+                actually use — measuring what happens, and publishing the
                 record either way.
               </p>
             </div>
@@ -273,7 +273,7 @@ export default function Home() {
                 <Reveal delay={240}>
                   <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
                     We grow the evidence for energetic and biophysical
-                    medicine openly â€” funded openly, held open, and published
+                    medicine openly — funded openly, held open, and published
                     for the benefit of all.
                   </p>
                 </Reveal>
@@ -309,7 +309,7 @@ export default function Home() {
                 <Reveal delay={240}>
                   <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
                     QCR CIC is not-for-profit. Your support keeps our studies
-                    open, independent, and free to read â€” for everyone.
+                    open, independent, and free to read — for everyone.
                   </p>
                 </Reveal>
               </div>
